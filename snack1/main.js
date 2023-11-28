@@ -28,3 +28,14 @@ const raceBike = [
     },
 ]
 
+let minWeight = Infinity;
+for (let i = 0; i < raceBike.length; i++) {
+    const bikeItem = raceBike[i];
+
+    if (bikeItem.weight <= minWeight) {
+        minWeight = bikeItem.weight;
+    }
+}
+
+const printBike = document.getElementById('bike');
+printBike.innerHTML = minWeight
