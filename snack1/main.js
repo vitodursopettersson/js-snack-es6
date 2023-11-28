@@ -18,24 +18,28 @@ const raceBike = [
     },
     {
         name: 'Bianchi Specialissima',
-        weight: 7,
+        weight: 4,
         photo: 'bianchi.jpg',
     },
     {
         name: 'Scott Addict RC Premium Disc',
-        weight: 6,
+        weight: 7,
         photo: 'scott.jpg',
     },
 ]
 
 let minWeight = Infinity;
+let lightBike
 for (let i = 0; i < raceBike.length; i++) {
     const bikeItem = raceBike[i];
 
-    if (bikeItem.weight <= minWeight) {
-        minWeight = bikeItem.weight;
+    if (bikeItem.weight < minWeight) {
+        minWeight = bikeItem.weight
+        lightBike = bikeItem
+        console.log(lightBike)
     }
 }
 
+
 const printBike = document.getElementById('bike');
-printBike.innerHTML = minWeight
+printBike.innerHTML = `<img src = "img/${lightBike.photo}" > <h3>${lightBike.name}</h3>`
